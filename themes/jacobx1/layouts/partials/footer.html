@@ -3,5 +3,10 @@
         <span>Powered by <a class="hugo" href="https://gohugo.io/" target="_blank">hugo</a></span>
     </div>
 </div>
-<script src="{{ .Site.BaseURL }}js/all.min.js"></script>
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+{{ $prettySocial := resources.Get "js/jquery.prettysocial.min.js" }}
+{{ $rainbow := resources.Get "js/rainbow-custom.min.js" }}
+{{ $scripts := resources.Get "js/scripts.js" }}
+{{ $allJs := slice $jquery $prettySocial $rainbow $scripts | resources.Concat "js/bundle.js" }}
+<script src="{{ $allJs.Permalink }}"></script>
 <script id="dsq-count-scr" src="//blog-jacobx1-com.disqus.com/count.js" async></script>
