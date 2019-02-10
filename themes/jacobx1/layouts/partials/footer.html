@@ -8,5 +8,5 @@
 {{ $rainbow := resources.Get "js/rainbow-custom.min.js" }}
 {{ $scripts := resources.Get "js/scripts.js" }}
 {{ $allJs := slice $jquery $prettySocial $rainbow $scripts | resources.Concat "js/bundle.js" }}
-<script src="{{ $allJs.Permalink }}"></script>
+<script src="{{ $allJs.Permalink | relURL }}"></script>
 <script id="dsq-count-scr" src="//blog-jacobx1-com.disqus.com/count.js" async></script>

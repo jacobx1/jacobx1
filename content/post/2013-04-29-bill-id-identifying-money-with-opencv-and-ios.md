@@ -19,4 +19,4 @@ I will be posting more information regarding technical aspects of the project fo
 
 [Bill ID Facebook Page][1]
 
- [1]: http://www.facebook.com/billidapp "Bill ID Facebook Page"
+ [1]: https://www.facebook.com/billidapp "Bill ID Facebook Page"

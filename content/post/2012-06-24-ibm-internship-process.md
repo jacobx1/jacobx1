@@ -70,4 +70,4 @@ I cannot talk about my project in detail but I can say that it will have an impa
 
 **Update #1: **New post readers here may find useful &#8211; [Tips for Securing an Internship at IBM (or anywhere, really)][1]
 
- [1]: http://www.jacobx1.com/2014/03/23/tips-for-securing-an-internship-at-ibm-or-anywhere-really/ "Tips for Securing an Internship at IBM (or anywhere, really)"
+ [1]: https://www.jacobx1.com/2014/03/23/tips-for-securing-an-internship-at-ibm-or-anywhere-really/ "Tips for Securing an Internship at IBM (or anywhere, really)"
