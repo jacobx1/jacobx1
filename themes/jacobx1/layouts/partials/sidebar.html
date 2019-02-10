@@ -1,11 +1,15 @@
 <div class="sidebar">
   <div class="header">
-    <hgroup>
-      <h1 class="brand-title">
-        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      </h1>
-      <h2 class="brand-tagline">{{ with .Site.Params.description }} {{.}} {{end}}</h2>
-    </hgroup>
+    <section class="header-top">
+        <hgroup>
+            <h1 class="brand-title">
+              <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            </h1>
+            <h2 class="brand-tagline">{{ with .Site.Params.description }} {{.}} {{end}}</h2>
+          </hgroup>
+          <div class="flex-spacer"></div>
+          <div class="to-top" id="back-to-top">back to top</div>
+    </section>
 
     <nav class="nav">
       <ul class="nav-list">

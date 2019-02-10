@@ -1,5 +1,21 @@
 @import "./_mixins.scss";
 
+$scroll-transition-time: 300ms;
+
+@mixin transition-base {
+  opacity: 1;
+  max-height: 500px;
+  transition-property: max-height, opacity;
+  transition-duration: $scroll-transition-time;
+}
+
+@mixin transition-to {
+  opacity: 0;
+  max-height: 0;
+  transition-property: opacity, max-height;
+  transition-duration: $scroll-transition-time;
+}
+
 .nav-item {
   display: inline-block;
   *display: inline;
@@ -14,40 +30,79 @@
   }
 }
 
+.flex-spacer {
+  flex: 1;
+}
+
 .sidebar {
   background: $color-sidebar-background;
   color: $color-sidebar-foreground;
-}
+  position: sticky;
+  top: 0;
 
-.header {
-  text-align: center;
-  padding: 1em;
-  margin: 3em auto;
+  transition: $scroll-transition-time;
 
-  @include break-at('small') {
-    margin: 80% 2em 0;
-    text-align: right;
+  .header {
+    padding: 2em;
+    margin: auto;
+    max-width: $body-max-width;
+
+    .brand-title,
+    .brand-tagline {
+      margin: 0;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    .header-top {
+      display: flex;
+    }
+
+    .to-top {
+      @include transition-to();
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .nav-list {
+      padding: 0;
+      margin: 0;
+      @include transition-base();
+    }
+
+    .brand-tagline {
+      font-weight: 300;
+      color: $color-accent;
+      @include transition-base();
+    }
   }
-}
 
-.brand-title,
-.brand-tagline {
-  margin: 0;
-}
-.brand-title {
-  text-transform: uppercase;
-}
+  &.scrolled {
+    transition: $scroll-transition-time;
 
-.brand-title a {
-  color: inherit;
-}
+    .header {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      
+      .brand-title {
+        font-size: 1em;
+      }
 
-.brand-tagline {
-  font-weight: 300;
-  color: $color-accent;
-}
+      .to-top {
+        @include transition-base();
+      }
+    }
 
-.nav-list {
-  padding: 0;
-  margin: 0;
+    .nav-list {
+      @include transition-to();
+    }
+
+    .brand-tagline {
+      @include transition-to();
+    }
+  }
 }

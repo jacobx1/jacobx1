@@ -14,6 +14,9 @@
 .content {
   padding: 2em 1em 0;
   font-size: 1em;
+  max-width: $body-max-width;
+
+  margin: auto;
 
   @include break-at('small') {
     padding: 2em 3em 0;
