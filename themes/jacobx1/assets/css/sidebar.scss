@@ -38,6 +38,10 @@ $scroll-transition-time: 300ms;
   background: $color-sidebar-background;
   color: $color-sidebar-foreground;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   top: 0;
 
   transition: $scroll-transition-time;
